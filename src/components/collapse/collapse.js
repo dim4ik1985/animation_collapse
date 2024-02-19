@@ -21,12 +21,12 @@ export class Collapse {
     const bannerText = document.createElement("p");
     bannerText.className = "banner-text";
     bannerText.textContent = message;
-
-    this._element.appendChild(this._collapseBanner);
+    this._element.after(this._collapseBanner);
     this._collapseBanner.appendChild(bannerText);
   }
 
   onCollapse() {
+    console.log();
     if (this._collapseBanner.classList.contains("open")) {
       this._collapseBanner.classList.remove("open");
       return;
